@@ -1,0 +1,95 @@
+ 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>Job Searcher</title>
+    <script type="text/javascript" src="src/index.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="job-header">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTu0h8rRkCDuttNTa2FsPq18_MOwz4SQBPjlNk-x4VEwK9KUhBq"
+        alt="job-header"
+        align="middle"
+      />
+    </div>
+
+    <div class="container">
+      <form class="add-job-form" id="job-form">
+        <h3>Let's start Job Searching!</h3>
+
+        <input
+          type="text"
+          name="title"
+          value=""
+          placeholder="Enter a job title..."
+          class="input-text"
+        />
+        <br />
+        <input
+        type="text"
+        name="description"
+        value=""
+        placeholder="Enter a job description.."
+        class="input-text"
+         />
+        <br />
+        <input
+        type="text"
+        name="status"
+        value=""
+        placeholder="Enter a job status.."
+        class="input-text"
+         />
+        <br />
+        <input
+        type="text"
+        name="rating"
+        value=""
+        placeholder="Enter job rating out of 5.."
+        class="input-text"
+         />
+        <br />
+        <input
+        type="text"
+        name="application-date"
+        value=""
+        placeholder="2020, 1, 20.."
+        class="input-text"
+         />
+        <br />
+        <input
+          type="text"
+          name="source"
+          value=""
+          placeholder="link to job source..."
+          class="input-text"
+        />
+        <br />
+        <input
+          type="submit"
+          name="submit"
+          value="New Job Application "
+          class="submit"
+        />
+      </form>
+    </div>
+    <p style="text-align:center">
+       <button id="new-job-btn">Add a new job opportunity!</button>
+    </p>
+
+    <div id="job-collection">
+        <!-- <div class="card">
+            <h2>Title</h2>
+            <p>Description </p>
+            <p>status</p>
+            <p>rating</p>
+            <p>date</p>
+            <p>source</p>
+            <button class="btn">Show Button <3</button>
+          </div> -->
+    </div>
+  </body>
+</html>
