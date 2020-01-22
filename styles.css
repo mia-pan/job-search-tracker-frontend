@@ -6,7 +6,7 @@ body {
   #job-header {
     display: flex;
     justify-content: center;
-    background: rgb(79, 127, 190);
+    background: #66A9E8;
     opacity: .8;
     height: 7rem;
     padding: 1rem;
@@ -19,17 +19,27 @@ body {
   
   #job-collection {
     margin: 2rem;
+    justify-content: center;
   }
+
+p {
+  margin: 5px
+  /* display: inline; */
+}
+
+h2 {
+  margin: 5px
+}
   
   .card {
     text-align: center;
     border: grey solid 1px;
     padding: 1rem;
-    width: 15rem;
-    height: 25rem;
+    width: 50rem;
+    height: 10rem;
     display: inline-grid;
-    margin: 1rem 2rem;
-    box-shadow: 3px 4px #e04b52
+    margin: 1rem 1rem;
+    box-shadow: 3px 4px #66A9E8
   }
   
   /* .job-avatar {
@@ -40,10 +50,10 @@ body {
   
   button {
     position: relative;
-    background-color: #e04b52;
+    background-color: #66A9E8;
     border: none;
     border-radius: 5px;
-    height: 3rem;
+    /* height: 3rem; */
     width: max-content;
     color: whitesmoke;
     font-size: 18px;
@@ -52,8 +62,8 @@ body {
   
   button:hover {
     background-color: whitesmoke;
-    border: #e04b52 solid 1px;
-    color: #e04b52;
+    border: #66A9E8 solid 1px;
+    color: #66A9E8;
   }
   
   .container {
@@ -61,7 +71,7 @@ body {
     width: stretch;
     height: auto;
     display: none;
-    background: #515DA2;
+    background: #BCEBFF;
     opacity: .8;
   }
   
@@ -71,7 +81,7 @@ body {
   
   .submit {
     position: relative;
-    background-color: #e04b52;
+    background-color: #66A9E8;
     border-radius: 5px;
     height: 2rem;
     width: max-content;
@@ -84,8 +94,8 @@ body {
   
   .submit:hover {
     background-color: whitesmoke;
-    border: #e04b52 solid 1px;
-    color: #e04b52;
+    border: #66A9E8 solid 1px;
+    color: #66A9E8;
   }
   
   
@@ -96,4 +106,70 @@ body {
     font-size: 18px;
     font-family: monospace;
     margin: 3px;
+  }
+
+  /* Css testing below here*/
+
+  #jobs {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  #jobs td, #jobs th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  #jobs tr:nth-child(even){background-color: #f2f2f2;}
+  
+  #jobs tr:hover {background-color: #BCEBFF;}
+  
+  #jobs th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #66A9E8;
+    color: white;
+  }
+
+  .button-add {
+    display: inline-block;
+    border-radius: 2px;
+    background-color: #66A9E8;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 25px;
+    width: 600px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+
+  }
+  
+  .button-add span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button-add span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button-add:hover span {
+    padding-right: 25px;
+  }
+  
+  .button-add:hover span:after {
+    opacity: 1;
+    right: 0;
   }
