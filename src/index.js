@@ -94,6 +94,7 @@ const makeJobCard = (jobObj) => {
 
         let modal = document.getElementById("myModal");
         modal.style.display = "block";
+        // modal.modal();
 
         let span = document.getElementsByClassName("close")[0]
         span.onclick = function() {
