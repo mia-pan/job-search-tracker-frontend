@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function(){
         buildJobObj(e)
         console.log("New Job submitted!")
     })
-    getUsers(currentUser)
+    getUsersJobs(currentUser)
     window.onclick = (e) => {
         clickWindow(e)
     }
@@ -45,6 +45,7 @@ const makeJobCard = (jobObj) => {
 
     let table = document.getElementById("jobs")
     let tr = document.createElement("tr")
+    tr.className = "generated-job-row"
 
 
     let td1 = document.createElement("td")
@@ -74,12 +75,9 @@ const makeJobCard = (jobObj) => {
     tr.appendChild(td5)
     tr.appendChild(td6)
 
-    // tr.addEventListener("click", function() {
-    //     console.log(`${jobObj.id}`)
-    // })
-
     tr.addEventListener("click", function() {
         modalJob(jobObj)
+
         let modal = document.getElementById("myModal");
         modal.style.display = "block";
 
@@ -88,10 +86,45 @@ const makeJobCard = (jobObj) => {
             modal.style.display = "none";
         }
 
+        let editForm = document.querySelector("#edit-job-form")
+        editForm.addEventListener("submit", function(e) {
+            e.preventDefault()
+            // console.log(e.target["edit-description"].value)
+            // console.log(generatedJobs)
+            // let jobRow = document.querySelector(".generated-job-row")
+            // // console.log(jobRow)
+            // if(jobRow) {
+            //     let jobRowParent = jobRow.parentNode
+            //     jobRowParent.remove()
+            // }
+            // while(generatedJobs.firstChild()) {
+            //     generatedJobs.removeChild(generatedJobs.firstChild())
+            // }
+            submitEdit(e, jobObj)
+            
+
         })
 
-table.appendChild(tr)
+        })
 
+    table.appendChild(tr)
+
+}
+
+const submitEdit = (e, jobObj) => {
+    fetch(`http://localhost:3000/jobs/${jobObj.id}`, {
+        method: "PATCH",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            description: e.target["edit-description"].value,
+            status: e.target["edit-status"].value,
+            rating: e.target["edit-rating"].value
+        })
+    }).then(res => res.json())
+    .then(document.location.reload(true))
+}
+
+const regenerateTable = () => {
 
 }
 
@@ -149,7 +182,7 @@ const postJob = (newJobObj) => {
     .then(data => makeJobCard(data))
 }
 
-const getUsers = (userId) => {
+const getUsersJobs = (userId) => {
     fetch(`http://localhost:3000/users/${userId}`)
     .then(res => res.json())
     .then(data => getEachJob(data))
@@ -162,6 +195,7 @@ const getJobs = () => {
 }
 
 const getEachJob = (userObj) => {
+
     let jobArray = userObj.jobs 
     // console.log(jobArray)
     jobArray.forEach(job => {
