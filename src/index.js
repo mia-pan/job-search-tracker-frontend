@@ -1,4 +1,4 @@
-let currentUser = 1
+let currentUser = null
 
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM CONTENT LOADED")
@@ -15,11 +15,8 @@ document.addEventListener("DOMContentLoaded", function(){
         // console.log("You pressed the add a new job opportunity button!")
 
     })
-    let userModal = document.getElementById('my-log-in-modal')
     window.onclick = e => {
-        if (e.target == userModal) {
-            userModal.style.display = "none";
-        }
+        clickLoginModal(e)
     }
     //handles new job form
     let newJobForm = document.querySelector(".add-job-form")
@@ -29,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log("New Job submitted!")
         newJobForm.reset()
     })
-    getUsersJobs(currentUser)
+    // getUsersJobs(currentUser)
     window.onclick = (e) => {
         clickWindow(e)
     }
@@ -42,6 +39,14 @@ const clickWindow = (e) => {
         modal.style.display = "none"
     }
 }
+
+const clickLoginModal  = (e) => {
+    let modal = document.getElementById("my-log-in-modal")
+    if(e.target == modal) {
+        modal.style.display = "none"
+    }
+}
+
 
 const makeJobCard = (jobObj) => {
 
@@ -122,8 +127,8 @@ const submitEdit = (e, jobObj) => {
     .then(document.location.reload(true))
 }
 
-const regenerateTable = () => {
-
+const clearTable = () => {
+    document.querySelectorAll(".generated-job-row").forEach(e => e.parentNode.removeChild(e));
 }
 
 const modalJob = job => {
@@ -222,6 +227,7 @@ const allUsers = (userArray, name) => {
     userArray.forEach(user => {
         if(matchUser(user, name)) {
             setCurrentUser(user)
+            // getUsersJobs(user.id)
         }
     })
 }
@@ -237,6 +243,13 @@ const matchUser = (userObj, name) => {
 
 const setCurrentUser = (userObj) => {
     currentUser = userObj.id
+    // let jobRow = document.querySelector(".generated-job-row")
+    document.querySelectorAll(".generated-job-row").forEach(e => e.parentNode.removeChild(e));
+    // while(jobRow) {
+    //     let parentRow = jobRow.parentNode
+    //     parentRow.removeChild(jobRow)
+    // }
+    getUsersJobs(currentUser)
 }
 //---- end of login functions -------------------------
 
@@ -256,12 +269,13 @@ const deleteJob = (jobId) => {
 //----  recent added login function (mia) -------------------------
 
 const logIn = () => {
+    let userModal = document.getElementById("my-log-in-modal");
     let loginButton = document.getElementById("login-button")
     loginButton.addEventListener("click", () => {
         // console.log(e.target["enter-name"].value)
         // getAllUsers(e.target["enter-name"].value)
         modalName()
-        let userModal = document.getElementById("my-log-in-modal");
+        
         userModal.style.display = "block";
 
         let span = document.getElementsByClassName("closeLogin")[0];
@@ -274,7 +288,8 @@ const logIn = () => {
      submitForm.addEventListener("submit", (e) => {
         e.preventDefault()
         console.log(e.target["enter-name"].value)
-        // getAllUsers(e.target["enter-name"].value)
+        getAllUsers(e.target["enter-name"].value)
+        userModal.style.display = "none"
 
     })
 }
