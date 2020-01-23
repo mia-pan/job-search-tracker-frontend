@@ -168,7 +168,10 @@ const setCurrentUser = (userObj) => {
 const deleteJob = (jobId) => {
     fetch(`http://localhost:3000/jobs/${jobId}`, {
         method: "DESTROY",
-        headers: {'Content-Type': 'application/json'}
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            
+        })
         
     })
 }
