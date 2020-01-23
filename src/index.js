@@ -75,8 +75,11 @@ const makeJobCard = (jobObj) => {
     tr.appendChild(td5)
     tr.appendChild(td6)
 
+
     tr.addEventListener("click", function() {
+        console.log(jobObj.id)
         modalJob(jobObj)
+        
 
         let modal = document.getElementById("myModal");
         modal.style.display = "block";
@@ -147,6 +150,10 @@ const modalJob = job => {
     let jobSrc = document.getElementById('j-source')
     jobSrc.innerText = job.source
 
+    let deletebtn = document.getElementById("delete-btn")
+    deletebtn.addEventListener("click", function() {
+        deleteJob(job.id)
+    })
 
 }
 //this function builds the job obj and will pass it to the backend and add it to the page
@@ -245,11 +252,13 @@ const setCurrentUser = (userObj) => {
 
 const deleteJob = (jobId) => {
     fetch(`http://localhost:3000/jobs/${jobId}`, {
-        method: "DESTROY",
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
+        method: "DELETE"
+        // headers: {'Content-Type': 'application/json'}
+        // body: JSON.stringify({
             
-        })
-        
+        // })
     })
+    // .then(res => res.json())
+    // .then(console.log)
+    .then(document.location.reload(true))
 }
