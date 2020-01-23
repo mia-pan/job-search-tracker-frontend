@@ -253,6 +253,7 @@ const deleteJob = (jobId) => {
     .then(document.location.reload(true))
 }
 //----  recent added login function (mia) -------------------------
+
 const logIn = () => {
     let loginButton = document.getElementById("login-button")
     loginButton.addEventListener("click", () => {
