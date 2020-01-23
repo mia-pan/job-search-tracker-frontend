@@ -8,15 +8,57 @@
   </head>
   <body>
     <div id="job-header">
-      <img
+      <div style="width: 33%; height: 100px;"></div>
+      <div style="width: 34%; height: 100px; margin: auto; text-align: center;"><img id= "image"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTu0h8rRkCDuttNTa2FsPq18_MOwz4SQBPjlNk-x4VEwK9KUhBq"
         alt="job-header"
-        align="middle"
-      />
+      /></div>
+      <div id="sign-in-button">
+        <button id="login-button">Log in</button>
+        <button id="signup-button">Sign up</button>
+      </div>
     </div>
-    <div id="myModal" class="modal">
+    
+      <!-- Login Modal content -->
+      <div id="my-log-in-modal" class="logInModal">
+        <div class = "login-modal-content">
+          <span class="closeLogin">&times;</span>
+          <h1 id="log-in"></h1>
+          <div class="login-modal-container">
+            <form class="enterName" id ="login name">
+              <h3 id="enter-name">Enter your Name</h3>
+              <input type="text"
+              name="enter-name"
+              value=""
+              placeholder="Enter your name.."
+              class="input-text"
+               />
+               <h4>forgot your password?</h4>
+              <br /> 
+              <input
+              type="submit"
+              name="Log in"
+              value="Log in"
+              class="submit"
+            />
+            <h4>OR</h4>
+            <input
+              type="submit"
+              name="Sign in"
+              value="Continue With Google"
+              class="submit-continue"
+            />
 
+
+            </form>
+             
+          </div>
+        </div>
+
+        </div>
+  <div id="myModal" class="modal">
       <!-- Modal content -->
+    
       <div class="modal-content">
         <span class="close">&times;</span>
         <p id="job-title">Some text in the Modal..</p>
