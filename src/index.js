@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
     window.onclick = (e) => {
         clickWindow(e)
     }
+    logIn();
 })
 
 const clickWindow = (e) => {
@@ -273,7 +274,7 @@ const logIn = () => {
      submitForm.addEventListener("submit", (e) => {
         e.preventDefault()
         console.log(e.target["enter-name"].value)
-        getAllUsers(e.target["enter-name"].value)
+        // getAllUsers(e.target["enter-name"].value)
 
     })
 }
