@@ -74,6 +74,10 @@ const makeJobCard = (jobObj) => {
     tr.addEventListener("click", function() {
         console.log(jobObj.id)
         modalJob(jobObj)
+        let deletebtn = document.getElementById("delete-btn")
+        deletebtn.addEventListener("click", function() {
+            deleteJob(jobObj.id)
+        })
         
 
         let modal = document.getElementById("myModal");
@@ -87,17 +91,6 @@ const makeJobCard = (jobObj) => {
         let editForm = document.querySelector("#edit-job-form")
         editForm.addEventListener("submit", function(e) {
             e.preventDefault()
-            // console.log(e.target["edit-description"].value)
-            // console.log(generatedJobs)
-            // let jobRow = document.querySelector(".generated-job-row")
-            // // console.log(jobRow)
-            // if(jobRow) {
-            //     let jobRowParent = jobRow.parentNode
-            //     jobRowParent.remove()
-            // }
-            // while(generatedJobs.firstChild()) {
-            //     generatedJobs.removeChild(generatedJobs.firstChild())
-            // }
             submitEdit(e, jobObj)
             
 
@@ -144,11 +137,6 @@ const modalJob = job => {
 
     let jobSrc = document.getElementById('j-source')
     jobSrc.innerText = job.source
-
-    let deletebtn = document.getElementById("delete-btn")
-    deletebtn.addEventListener("click", function() {
-        deleteJob(job.id)
-    })
 
 }
 //this function builds the job obj and will pass it to the backend and add it to the page
@@ -253,7 +241,7 @@ const deleteJob = (jobId) => {
             
         // })
     })
-    // .then(res => res.json())
-    // .then(console.log)
+    .then(res => res.json())
+    .then(console.log)
     .then(document.location.reload(true))
 }
