@@ -19,14 +19,9 @@ document.addEventListener("DOMContentLoaded", function(){
     let newJobForm = document.querySelector(".add-job-form")
     newJobForm.addEventListener("submit", function(e){
         e.preventDefault()
-        console.log(e.target.title.value) //Job Title
-        console.log(e.target.description.value) //Job Description
-        console.log(e.target.status.value) //Job Status
-        console.log(e.target.rating.value) //Job Value
-        console.log(e.target["application-date"].value) //Job Application Date
-        console.log(e.target.source.value) //Job Source
         buildJobObj(e)
         console.log("New Job submitted!")
+        newJobForm.reset()
     })
     getUsersJobs(currentUser)
     window.onclick = (e) => {
