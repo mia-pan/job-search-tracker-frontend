@@ -32,82 +32,44 @@ document.addEventListener("DOMContentLoaded", function(){
 })
 
 const makeJobCard = (jobObj) => {
-    // let jobDiv = document.querySelector("#job-collection")
-    // let div = document.createElement("div")
-    // div.className = "card"
 
-    // let h2 = document.createElement("h2")
-    // h2.innerText = jobObj.title
-    // h2.id = "card-description"
-
-    // let pDesc = document.createElement("p")
-    // pDesc.innerText = jobObj.description
-    // pDesc.id = "card-description"
-
-    // let pStatus = document.createElement("p")
-    // pStatus.innerText = jobObj.status
-    // pStatus.id = "card-status"
-
-    // let pRating = document.createElement("p")
-    // pRating.innerText = `${jobObj.rating}` + "/5"
-    // pRating.id = "card-rating"
-
-    // let pDate = document.createElement("p")
-    // pDate.innerText = jobObj["application_date"]
-    // pDate.id = "card-date"
-
-    // let pSource = document.createElement("p")
-    // pSource.innerText = jobObj.source
-    // pSource.id = "card-source"
-//--------------------TEST AREA BELOW--------------------------
-let table = document.getElementById("jobs")
-let tr = document.createElement("tr")
+    let table = document.getElementById("jobs")
+    let tr = document.createElement("tr")
 
 
-let td1 = document.createElement("td")
-td1.innerText = jobObj.title
+    let td1 = document.createElement("td")
+    td1.innerText = jobObj.title
 
-let td2 = document.createElement("td")
-td2.innerText = jobObj.description
-
-
-let td3 = document.createElement("td")
-td3.innerText = jobObj.status
+    let td2 = document.createElement("td")
+    td2.innerText = jobObj.description
 
 
-let td4 = document.createElement("td")
-td4.innerText = `${jobObj.rating}` + "/5"
-
-let td5 = document.createElement("td")
-td5.innerText = jobObj["application_date"]
-
-let td6 = document.createElement("td")
-td6.innerText = jobObj.source
-
-tr.appendChild(td1)
-tr.appendChild(td2)
-tr.appendChild(td3)
-tr.appendChild(td4)
-tr.appendChild(td5)
-tr.appendChild(td6)
-
-tr.addEventListener("click", function() {
-    console.log(`${jobObj.id}`)
-})
-
-table.appendChild(tr)
+    let td3 = document.createElement("td")
+    td3.innerText = jobObj.status
 
 
+    let td4 = document.createElement("td")
+    td4.innerText = `${jobObj.rating}` + "/5"
 
-//--------------------TEST AREA ABOVE--------------------------
-    // div.appendChild(h2)
-    // div.appendChild(pDesc)
-    // div.appendChild(pStatus)
-    // div.appendChild(pRating)
-    // div.appendChild(pDate)
-    // div.appendChild(pSource)
+    let td5 = document.createElement("td")
+    td5.innerText = jobObj["application_date"]
 
-    // jobDiv.appendChild(div)
+    let td6 = document.createElement("td")
+    td6.innerText = jobObj.source
+
+    tr.appendChild(td1)
+    tr.appendChild(td2)
+    tr.appendChild(td3)
+    tr.appendChild(td4)
+    tr.appendChild(td5)
+    tr.appendChild(td6)
+
+    tr.addEventListener("click", function() {
+        console.log(`${jobObj.id}`)
+    })
+
+    table.appendChild(tr)
+
 }
 
 //this function builds the job obj and will pass it to the backend and add it to the page
@@ -161,4 +123,52 @@ const getEachJob = (userObj) => {
     jobArray.forEach(job => {
         makeJobCard(job)
     });
+}
+
+//post for creating a new user - untested until we have create user form
+const createUser = (userObj) => {
+    fetch("http://localhost:3000/users/", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            userObj
+        })
+    }).then(res => res.json())
+    .then(console.log)
+}
+// fetch for login ---------------- and login functions
+const getAllUsers = (name) => {
+    fetch("http://localhost:3000/users/")
+    .then(res => res.json())
+    .then(data => allUsers(data, name))
+}
+
+const allUsers = (userArray, name) => {
+    userArray.forEach(user => {
+        if(matchUser(user, name)) {
+            setCurrentUser(user)
+        }
+    })
+}
+
+const matchUser = (userObj, name) => {
+    if(userObj.name == name) {
+        return true
+    } else {
+        return false
+    }
+}
+
+
+const setCurrentUser = (userObj) => {
+    currentUser = userObj.id
+}
+//---- end of login functions -------------------------
+
+const deleteJob = (jobId) => {
+    fetch(`http://localhost:3000/jobs/${jobId}`, {
+        method: "DESTROY",
+        headers: {'Content-Type': 'application/json'}
+        
+    })
 }
