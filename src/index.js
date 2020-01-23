@@ -29,7 +29,17 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log("New Job submitted!")
     })
     getUsers(currentUser)
+    window.onclick = (e) => {
+        clickWindow(e)
+    }
 })
+
+const clickWindow = (e) => {
+    let modal = document.getElementById("myModal")
+    if(e.target == modal) {
+        modal.style.display = "none"
+    }
+}
 
 const makeJobCard = (jobObj) => {
 
