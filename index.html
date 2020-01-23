@@ -14,6 +14,57 @@
         align="middle"
       />
     </div>
+    <div id="myModal" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p id="job-title">Some text in the Modal..</p>
+        <p id="job-desc">Some text in the Modal..</p>
+        <p id="job-stat">Some text in the Modal..</p>
+        <p id="job-rating">Some text in the Modal..</p>
+        <p id="job-appd">Some text in the Modal..</p>
+        <p id="j-source">Some text in the Modal..</p>
+
+        <div class="modal-container">
+          <form class="edit-job-form" id="edit-job-form">
+            <h3>Edit this Job!</h3>
+
+            <input
+            type="text"
+            name="edit-description"
+            value=""
+            placeholder="Enter a job description.."
+            class="input-text"
+             />
+            <br />
+            <input
+            type="text"
+            name="edit-status"
+            value=""
+            placeholder="Enter a job status.."
+            class="input-text"
+             />
+            <br />
+            <input
+            type="text"
+            name="edit-rating"
+            value=""
+            placeholder="Enter job rating out of 5.."
+            class="input-text"
+             /><br>
+            <input
+              type="submit"
+              name="submit"
+              value="Save Job Search Changes"
+              class="submit"
+            />
+          </form>
+        </div>  
+      </div>
+
+    
+    </div>
 
     <div class="container">
       <form class="add-job-form" id="job-form">

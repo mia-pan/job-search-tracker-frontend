@@ -64,14 +64,48 @@ const makeJobCard = (jobObj) => {
     tr.appendChild(td5)
     tr.appendChild(td6)
 
-    tr.addEventListener("click", function() {
-        console.log(`${jobObj.id}`)
-    })
+    // tr.addEventListener("click", function() {
+    //     console.log(`${jobObj.id}`)
+    // })
 
-    table.appendChild(tr)
+    tr.addEventListener("click", function() {
+        modalJob(jobObj)
+        let modal = document.getElementById("myModal");
+        modal.style.display = "block";
+
+        let span = document.getElementsByClassName("close")[0]
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        })
+
+table.appendChild(tr)
+
 
 }
 
+const modalJob = job => {
+    let jobTitle = document.getElementById('job-title')
+    jobTitle.innerText = job.title
+
+    let jobDesc = document.getElementById('job-desc')
+    jobDesc.innerText = job.description
+
+    let jobStat = document.getElementById('job-stat')
+    jobStat.innerText = job.status
+
+    let jobRat = document.getElementById('job-rating')
+    jobRat.innerText = `Rating: ${job.rating}`
+
+    let jobAppd = document.getElementById('job-appd')
+    jobAppd.innerText = job["application_date"]
+
+    let jobSrc = document.getElementById('j-source')
+    jobSrc.innerText = job.source
+
+
+}
 //this function builds the job obj and will pass it to the backend and add it to the page
 const buildJobObj = (e) => {
     let newJob = {
