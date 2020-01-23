@@ -13,8 +13,14 @@ document.addEventListener("DOMContentLoaded", function(){
             newJobFormContainer.style.display = "block"
         }
         // console.log("You pressed the add a new job opportunity button!")
-    })
 
+    })
+    let userModal = document.getElementById('my-log-in-modal')
+    window.onclick = e => {
+        if (e.target == userModal) {
+            userModal.style.display = "none";
+        }
+    }
     //handles new job form
     let newJobForm = document.querySelector(".add-job-form")
     newJobForm.addEventListener("submit", function(e){
@@ -27,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function(){
     window.onclick = (e) => {
         clickWindow(e)
     }
+    logIn();
 })
 
 const clickWindow = (e) => {
@@ -233,6 +240,7 @@ const setCurrentUser = (userObj) => {
 }
 //---- end of login functions -------------------------
 
+
 const deleteJob = (jobId) => {
     fetch(`http://localhost:3000/jobs/${jobId}`, {
         method: "DELETE"
@@ -245,3 +253,35 @@ const deleteJob = (jobId) => {
     .then(console.log)
     .then(document.location.reload(true))
 }
+//----  recent added login function (mia) -------------------------
+
+const logIn = () => {
+    let loginButton = document.getElementById("login-button")
+    loginButton.addEventListener("click", () => {
+        // console.log(e.target["enter-name"].value)
+        // getAllUsers(e.target["enter-name"].value)
+        modalName()
+        let userModal = document.getElementById("my-log-in-modal");
+        userModal.style.display = "block";
+
+        let span = document.getElementsByClassName("closeLogin")[0];
+        span.onclick = () => {
+            userModal.style.display = "none";
+        }
+        
+    })
+    let submitForm = document.getElementById("login name")
+     submitForm.addEventListener("submit", (e) => {
+        e.preventDefault()
+        console.log(e.target["enter-name"].value)
+        // getAllUsers(e.target["enter-name"].value)
+
+    })
+}
+
+const modalName = () => {
+    let name = document.getElementById('log-in')
+    name.innerText = "Welcome to Job Search Tracker"
+}
+
+//---- end of the recent added login function(mia)-------------------------
