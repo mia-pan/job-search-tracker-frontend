@@ -84,11 +84,13 @@ const makeJobCard = (jobObj) => {
 
 
     tr.addEventListener("click", function() {
-        console.log(jobObj.id)
+        // console.log(jobObj.id)
         modalJob(jobObj)
         let deletebtn = document.getElementById("delete-btn")
         deletebtn.addEventListener("click", function() {
             deleteJob(jobObj.id)
+            clearTable()
+            getUsersJobs(currentUser)
         })
         
 
@@ -111,7 +113,7 @@ const makeJobCard = (jobObj) => {
         })
 
     table.appendChild(tr)
-
+    return table
 }
 
 const submitEdit = (e, jobObj) => {
@@ -124,7 +126,15 @@ const submitEdit = (e, jobObj) => {
             rating: e.target["edit-rating"].value
         })
     }).then(res => res.json())
-    .then(document.location.reload(true))
+    .then(generateTable(jobObj.user_id))
+}
+
+const generateTable = (userId) => {
+    clearTable()
+    currentUser = userId
+    console.log(currentUser)
+    getUsersJobs(currentUser)
+    // currentUser
 }
 
 const clearTable = () => {
@@ -257,14 +267,9 @@ const setCurrentUser = (userObj) => {
 const deleteJob = (jobId) => {
     fetch(`http://localhost:3000/jobs/${jobId}`, {
         method: "DELETE"
-        // headers: {'Content-Type': 'application/json'}
-        // body: JSON.stringify({
-            
-        // })
     })
     .then(res => res.json())
-    .then(console.log)
-    .then(document.location.reload(true))
+    // .then(console.log)
 }
 //----  recent added login function (mia) -------------------------
 
