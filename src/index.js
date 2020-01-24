@@ -1,8 +1,11 @@
 let currentUser = null
 
+let logInStatus = false
+
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM CONTENT LOADED")
-
+    logIn()
+    logOut()
     //sets an event listener on Add a new job opportunity button and displays the form to add a new job
     let addJobButton = document.querySelector(".button-add")
     addJobButton.addEventListener("click", function(){
@@ -30,7 +33,37 @@ document.addEventListener("DOMContentLoaded", function(){
     window.onclick = (e) => {
         clickWindow(e)
     }
-    logIn();
+
+    
+    // //my Hide and Seek with log in Button 
+    // const logOutButton = document.getElementById("logout-button")
+    // const myProfileButton = document.getElementById("profile-button")
+    // // const loginButton = document.getElementById("login-button")
+    // if(logInStatus){
+    //     logOutButton.style.display = "block"
+    //     myProfileButton.style.display = "block"
+    // }else {
+    //     logOutButton.style.display = "none"
+    //     myProfileButton.style.display = "none"
+    // }
+    // if(currentUser) {
+    //     logOutButton.style.display = "block"
+    //     myProfileButton.style.display = "block"
+    // }else {
+    //     logOutButton.style.display = "none"
+    //     myProfileButton.style.display = "none"
+    // }
+    // let loginForm = document.getElementById("login-name")
+    // loginForm.addEventListener("click", () => {
+    //     logInStatus =! logInStatus
+        // if(logInStatus){
+        //     logOutButton.style.display = "block"
+        // }else {
+        //     myProfileButton.style.display = "none"
+        // }
+
+    // })
+
 })
 
 const clickWindow = (e) => {
@@ -289,7 +322,7 @@ const logIn = () => {
     loginButton.addEventListener("click", () => {
         // console.log(e.target["enter-name"].value)
         // getAllUsers(e.target["enter-name"].value)
-        modalName()
+        // modalName()
         
         userModal.style.display = "block";
 
@@ -299,7 +332,7 @@ const logIn = () => {
         }
         
     })
-    let submitForm = document.getElementById("login name")
+    let submitForm = document.getElementById("login-name")
      submitForm.addEventListener("submit", (e) => {
         e.preventDefault()
         console.log(e.target["enter-name"].value)
@@ -314,4 +347,26 @@ const modalName = () => {
     name.innerText = "Welcome to Job Search Tracker"
 }
 
-//---- end of the recent added login function(mia)-------------------------
+//----  recent added log Out function (mia) -------------------------
+
+const logOut = () => {
+    let logOutModal = document.getElementById("my-log-out-modal");
+    let logOutButton = document.getElementById("logout-button")
+    logOutButton.addEventListener("click", () => {
+        // console.log(e.target["enter-name"].value)
+        // getAllUsers(e.target["enter-name"].value)
+        // modalName()
+        
+        logOutModal.style.display = "block";
+
+        let span = document.getElementsByClassName("closeLogout")[0];
+        span.onclick = () => {
+            logOutModal.style.display = "none";
+        }
+        
+    })
+
+    
+}
+
+//----  recent added log Out function (mia) -------------------------

@@ -9,7 +9,18 @@
   </head>
   <body>
     <div id="job-header">
-      <div style="width: 33%; height: 100px;"></div>
+      <div style="width: 33%; height: 100px;">
+      <div id="profile">
+        <img  id= "profile-image" 
+        style = "height: 48px; width: 48px;"
+        src="https://is3-ssl.mzstatic.com/image/thumb/Purple123/v4/68/9d/49/689d4905-203d-f90f-d2a0-0f1c596bd484/source/256x256bb.jpg"
+        alt="profile-pic"
+         />
+         <button id="profile-button">My Profile</button>
+         <button id="logout-button">Log out</button>
+
+      </div>
+      </div> 
       <div style="width: 34%; height: 100px; margin: auto; text-align: center;"><img id= "image"
         src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTu0h8rRkCDuttNTa2FsPq18_MOwz4SQBPjlNk-x4VEwK9KUhBq"
         alt="job-header"
@@ -19,14 +30,52 @@
         <button id="signup-button">Sign up</button>
       </div>
     </div>
+<!-- My Profile Modal content -->
+<div id="my-profile-modal" class="profileModal">
+  <div class = "profile-modal-content">
+    <span class="closeProfile">&times;</span>
+    <h1 id="profile"></h1>
+    <div class="profile-modal-container">
+      
+         <h4>My Profile</h4>
+         <p id="user-name">Some text in the Modal..</p>
+         <p id="user-age">Some text in the Modal..</p>
+         <p id="user-resume">Some text in the Modal..</p>
+         <p id="user-linkedin">Some text in the Modal..</p>
+         <br /> 
+         
+    </div>
+  </div>
+
+</div>
+
+    <!-- Log out Modal content -->
+    <div id="my-log-out-modal" class="logOutModal">
+      <div class = "logout-modal-content">
+        <span class="closeLogout">&times;</span>
+        <h1 id="log-out"></h1>
+        <div class="logout-modal-container">
+          
+             <h4>See You Next Time! </h4>
+             <br /> 
+             <input
+             type="submit"
+             name="Log out"
+             value="Log out"
+             class="submit-logout"
+             /> 
+        </div>
+      </div>
+
+    </div>
     
-      <!-- Login Modal content -->
+    <!-- Login Modal content -->
       <div id="my-log-in-modal" class="logInModal">
         <div class = "login-modal-content">
           <span class="closeLogin">&times;</span>
           <h1 id="log-in"></h1>
           <div class="login-modal-container">
-            <form class="enterName" id ="login name">
+            <form class="enterName" id ="login-name">
               <h3 id="enter-name">Enter your Name</h3>
               <input type="text"
               name="enter-name"
