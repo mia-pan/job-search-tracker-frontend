@@ -6,8 +6,11 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM CONTENT LOADED")
     logIn()
     logOut()
-    if(currentUser ==! null){
+    // console.log(currentUser)
+    if(currentUser == null){
+    }else {
         getUsersJobs(currentUser)
+        // console.log(currentUser)
     }
     //sets an event listener on Add a new job opportunity button and displays the form to add a new job
     let addJobButton = document.querySelector(".button-add")
@@ -246,11 +249,11 @@ const getUsersJobs = (userId) => {
     .then(data => getEachJob(data))
 }
 
-const getJobs = () => {
-    fetch("http://localhost:3000/jobs/")
-    .then(res => res.json())
-    .then(console.log)
-}
+// const getJobs = () => {
+//     fetch("http://localhost:3000/jobs/")
+//     .then(res => res.json())
+//     .then(console.log)
+// }
 
 const getEachJob = (userObj) => {
 
@@ -276,6 +279,7 @@ const createUser = (userObj) => {
 const getAllUsers = (name) => {
     fetch("http://localhost:3000/users/")
     .then(res => res.json())
+    // .then(console.log)
     .then(data => allUsers(data, name))
 }
 
@@ -283,7 +287,7 @@ const allUsers = (userArray, name) => {
     userArray.forEach(user => {
         if(matchUser(user, name)) {
             setCurrentUser(user)
-            getUsersJobs(currentUser)
+            getUsersJobs(user.id)
         }
     })
 }
