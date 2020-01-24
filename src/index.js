@@ -108,6 +108,7 @@ const makeJobCard = (jobObj) => {
     let td6 = document.createElement("td")
     td6.innerText = jobObj.source
 
+
     tr.appendChild(td1)
     tr.appendChild(td2)
     tr.appendChild(td3)
@@ -116,15 +117,17 @@ const makeJobCard = (jobObj) => {
     tr.appendChild(td6)
 
 
+
     tr.addEventListener("click", function() {
         // console.log(jobObj.id)
         modalJob(jobObj)
         let deletebtn = document.getElementById("delete-btn")
         deletebtn.addEventListener("click", function() {
-            deleteJob(jobObj.id)
+        
+            // clearTable()
+            deleteJob(jobObj)
+            generateTable(currentUser)
 
-            clearTable()
-            getUsersJobs(currentUser)
         })
         
 
@@ -152,6 +155,9 @@ const makeJobCard = (jobObj) => {
 }
 
 const submitEdit = (e, jobObj) => {
+    // const des = document.getElementById("edit-description")
+    // let currentDesc = e.target["edit-description"].value
+    // des.textContent = currentDesc
     fetch(`http://localhost:3000/jobs/${jobObj.id}`, {
         method: "PATCH",
         headers: {'Content-Type': 'application/json'},
@@ -165,6 +171,7 @@ const submitEdit = (e, jobObj) => {
 }
 
 const generateTable = (userId) => {
+
     clearTable()
     currentUser = userId
     console.log(currentUser)
@@ -176,6 +183,7 @@ const clearTable = () => {
     document.querySelectorAll(".generated-job-row").forEach(e => e.parentNode.removeChild(e));
 }
 
+//modal show for job
 const modalJob = job => {
     let jobTitle = document.getElementById('job-title')
     jobTitle.innerText = job.title
@@ -299,11 +307,11 @@ const setCurrentUser = (userObj) => {
 //---- end of login functions -------------------------
 
 
-const deleteJob = (jobId) => {
-    fetch(`http://localhost:3000/jobs/${jobId}`, {
+const deleteJob = (jobObj) => {
+    fetch(`http://localhost:3000/jobs/${jobObj.id}`, {
         method: "DELETE"
     })
-    .then(res => res.json())
+    // .then(res => res.json())
     // .then(console.log)
 }
 //----  recent added login function (mia) -------------------------
