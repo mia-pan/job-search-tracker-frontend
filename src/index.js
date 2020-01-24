@@ -1,5 +1,7 @@
 let currentUser = null
 
+let logInStatus = false
+
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM CONTENT LOADED")
 
@@ -31,6 +33,20 @@ document.addEventListener("DOMContentLoaded", function(){
         clickWindow(e)
     }
     logIn();
+    //my Hide and Seek with log in Button 
+    const logOutButton = getElementById("logout-button")
+    const myProfileButton = getElementById("profile-button")
+    const loginButton = getElementById("login-button")
+    loginButton.addEventListener("click", () => {
+        logInStatus =! logInStatus
+        if(logInStatus){
+            logOutButton.style.display = "block"
+        }else {
+            myProfileButton.style.display = "none"
+        }
+
+    })
+
 })
 
 const clickWindow = (e) => {
