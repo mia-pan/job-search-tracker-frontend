@@ -1,6 +1,6 @@
 let currentUser = localStorage.getItem(`currentUser`)
 
-let logInStatus = false
+// let logInStatus = false
 
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM CONTENT LOADED")
@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function(){
     if(currentUser == null){
     }else {
         getUsersJobs(currentUser)
-        // console.log(currentUser)
     }
     //sets an event listener on Add a new job opportunity button and displays the form to add a new job
     let addJobButton = document.querySelector(".button-add")
@@ -40,6 +39,22 @@ document.addEventListener("DOMContentLoaded", function(){
         clickWindow(e)
     }
 
+    const logOutButton = document.getElementById("logout-button")
+    let loginForm = document.getElementById("login-name")
+    let logOutConfirmButton = document.querySelector(".submit-logout")
+    logOutConfirmButton.addEventListener("click", function(){
+        logOutButton.style.display = "none"
+    })
+    loginForm.addEventListener("submit", function() {
+        logOutButton.style.display = "block"
+    })
+    
+    if(currentUser == null){
+        logOutButton.style.display = "none"
+    }else {
+        logOutButton.style.display = "block"
+    }
+    
     
     // //my Hide and Seek with log in Button 
     // const logOutButton = document.getElementById("logout-button")
@@ -62,11 +77,11 @@ document.addEventListener("DOMContentLoaded", function(){
     // let loginForm = document.getElementById("login-name")
     // loginForm.addEventListener("click", () => {
     //     logInStatus =! logInStatus
-        // if(logInStatus){
-        //     logOutButton.style.display = "block"
-        // }else {
-        //     myProfileButton.style.display = "none"
-        // }
+    //     if(logInStatus){
+    //         logOutButton.style.display = "block"
+    //     }else {
+    //         myProfileButton.style.display = "none"
+    //     }
 
     // })
 
