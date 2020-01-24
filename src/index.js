@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM CONTENT LOADED")
     logIn()
     logOut()
+    signUpModal()
     // console.log(currentUser)
     if(currentUser == null){
     }else {
@@ -399,3 +400,19 @@ const logOut = () => {
 }
 
 //----  recent added log Out function (mia) -------------------------
+
+
+//------------sign up modal--------------------------------------
+const signUpModal = () => {
+    let signUpButton = document.getElementById('signup-button')
+
+    signUpButton.onclick = () => {
+        let modal = document.getElementById('sign-up-modal')
+        modal.style.display = "block";
+
+        let span = document.getElementsByClassName("sign-close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+          }
+    }
+}
