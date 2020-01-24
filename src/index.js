@@ -1,4 +1,4 @@
-let currentUser = null
+let currentUser = localStorage.getItem(`currentUser`)
 
 let logInStatus = false
 
@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM CONTENT LOADED")
     logIn()
     logOut()
+    if(currentUser ==! null){
+        getUsersJobs(currentUser)
+    }
     //sets an event listener on Add a new job opportunity button and displays the form to add a new job
     let addJobButton = document.querySelector(".button-add")
     addJobButton.addEventListener("click", function(){
@@ -280,7 +283,7 @@ const allUsers = (userArray, name) => {
     userArray.forEach(user => {
         if(matchUser(user, name)) {
             setCurrentUser(user)
-            // getUsersJobs(user.id)
+            getUsersJobs(currentUser)
         }
     })
 }
@@ -296,13 +299,14 @@ const matchUser = (userObj, name) => {
 
 const setCurrentUser = (userObj) => {
     currentUser = userObj.id
+    localStorage.setItem(`currentUser`, `${currentUser}`)
     // let jobRow = document.querySelector(".generated-job-row")
-    document.querySelectorAll(".generated-job-row").forEach(e => e.parentNode.removeChild(e));
+    // document.querySelectorAll(".generated-job-row").forEach(e => e.parentNode.removeChild(e));
     // while(jobRow) {
     //     let parentRow = jobRow.parentNode
     //     parentRow.removeChild(jobRow)
     // }
-    getUsersJobs(currentUser)
+    // getUsersJobs(currentUser)
 }
 //---- end of login functions -------------------------
 
@@ -363,6 +367,12 @@ const logOut = () => {
         span.onclick = () => {
             logOutModal.style.display = "none";
         }
+        let confirmLogout = document.querySelector(".submit-logout")
+        confirmLogout.addEventListener("click", function(){
+            logOutModal.style.display = "none";
+            localStorage.clear()
+            clearTable()
+        })
         
     })
 
