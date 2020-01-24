@@ -129,7 +129,8 @@ const makeJobCard = (jobObj) => {
         
             // clearTable()
             deleteJob(jobObj)
-            generateTable(currentUser)
+            window.location.reload(true)
+            // generateTable(currentUser)
 
         })
         
@@ -169,8 +170,7 @@ const submitEdit = (e, jobObj) => {
             status: e.target["edit-status"].value,
             rating: e.target["edit-rating"].value
         })
-    }).then(res => res.json())
-    .then(generateTable(jobObj.user_id))
+    }).then(window.location.reload(true))
 }
 
 const generateTable = (userId) => {
