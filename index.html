@@ -30,14 +30,52 @@
         <button id="signup-button">Sign up</button>
       </div>
     </div>
+<!-- My Profile Modal content -->
+<div id="my-profile-modal" class="profileModal">
+  <div class = "profile-modal-content">
+    <span class="closeProfile">&times;</span>
+    <h1 id="profile"></h1>
+    <div class="profile-modal-container">
+      
+         <h4>My Profile</h4>
+         <p id="user-name">Some text in the Modal..</p>
+         <p id="user-age">Some text in the Modal..</p>
+         <p id="user-resume">Some text in the Modal..</p>
+         <p id="user-linkedin">Some text in the Modal..</p>
+         <br /> 
+         
+    </div>
+  </div>
+
+</div>
+
+    <!-- Log out Modal content -->
+    <div id="my-log-out-modal" class="logOutModal">
+      <div class = "logout-modal-content">
+        <span class="closeLogout">&times;</span>
+        <h1 id="log-out"></h1>
+        <div class="logout-modal-container">
+          
+             <h4>See You Next Time! </h4>
+             <br /> 
+             <input
+             type="submit"
+             name="Log out"
+             value="Log out"
+             class="submit-logout"
+             /> 
+        </div>
+      </div>
+
+    </div>
     
-      <!-- Login Modal content -->
+    <!-- Login Modal content -->
       <div id="my-log-in-modal" class="logInModal">
         <div class = "login-modal-content">
           <span class="closeLogin">&times;</span>
           <h1 id="log-in"></h1>
           <div class="login-modal-container">
-            <form class="enterName" id ="login name">
+            <form class="enterName" id ="login-name">
               <h3 id="enter-name">Enter your Name</h3>
               <input type="text"
               name="enter-name"
