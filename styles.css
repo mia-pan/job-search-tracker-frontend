@@ -1,455 +1,455 @@
 /* @import "bootstrap"; */
 
 body {
-    margin: 0;
-    font-family: monospace;
-  }
-  
-  #job-header {
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    background: #66A9E8;
-    opacity: .8;
-    height: 7rem;
-    padding: 1rem;
-  }
+  margin: 0;
+  font-family: monospace;
+}
 
-  #sign-in-button{
-    width: 33%;
-  }
-  
-  #image {
-    justify-content: center;
-    align-content: center;
+#job-header {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  background: #66A9E8;
+  opacity: .8;
+  height: 7rem;
+  padding: 1rem;
+}
 
-  }
-  
-  #job-header img {
-    height: 6rem;
-    width: auto;
-  }
-  
-  #login-button, #signup-button {
-    background-color: lightblue;
-    float: right;
-    margin: 10px;
-  }
-  #job-collection {
-    margin: 2rem;
-    justify-content: center;
-  }
+#sign-in-button{
+  width: 33%;
+}
+
+#image {
+  justify-content: center;
+  align-content: center;
+
+}
+
+#job-header img {
+  height: 6rem;
+  width: auto;
+}
+
+#login-button, #signup-button {
+  background-color: lightblue;
+  float: right;
+  margin: 10px;
+}
+#job-collection {
+  margin: 2rem;
+  justify-content: center;
+}
 
 p {
-  margin: 5px
-  /* display: inline; */
+margin: 5px
+/* display: inline; */
 }
 
 h2 {
-  margin: 5px
-}
-  
-  .card {
-    text-align: center;
-    border: grey solid 1px;
-    padding: 1rem;
-    width: 50rem;
-    height: 10rem;
-    display: inline-grid;
-    margin: 1rem 1rem;
-    box-shadow: 3px 4px #66A9E8
-  }
-  
-  /* .job-avatar {
-    justify-self: center;
-    height: 12rem;
-    width: auto;
-  } */
-  
-  button {
-    position: relative;
-    background-color: #66A9E8;
-    border: none;
-    border-radius: 5px;
-    /* height: 3rem; */
-    width: max-content;
-    color: whitesmoke;
-    font-size: 18px;
-    justify-self: center;
-  }
-  
-  button:hover {
-    background-color: whitesmoke;
-    border: #66A9E8 solid 1px;
-    color: #66A9E8;
-  }
-  
-  .container {
-    padding: 1rem;
-    width: stretch;
-    height: auto;
-    display: none;
-    background: #BCEBFF;
-    opacity: .8;
-    box-shadow: 5px 5px 35px rgba(10, 20, 30, 0.3);
-    margin: 20px auto;
-  }
-  
-  .add-job-form {
-    width: 80%
-  }
-  
-  .submit {
-    position: relative;
-    background-color: #66A9E8;
-    border-radius: 5px;
-    height: 2rem;
-    width: max-content;
-    color: whitesmoke;
-    font-size: 18px;
-    justify-self: center;
-    font-family: monospace;
-    margin: 3px;
-  }
-  
-  .submit:hover {
-    background-color: whitesmoke;
-    border: #66A9E8 solid 1px;
-    color: #66A9E8;
-  }
-  
-  
-  .input-text {
-    border-radius: 5px;
-    height: 2rem;
-    width: 60%;
-    font-size: 18px;
-    font-family: monospace;
-    margin: 3px;
-  }
-
-  /* Css testing below here*/
-
-  #jobs {
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  #jobs td, #jobs th {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
-  #jobs tr:nth-child(even){background-color: #f2f2f2;}
-  
-  #jobs tr:hover {background-color: #BCEBFF;}
-  
-  #jobs th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: #66A9E8;
-    color: white;
-  }
-
-  .button-add {
-    display: inline-block;
-    border-radius: 2px;
-    background-color: #66A9E8;
-    border: none;
-    color: #FFFFFF;
-    text-align: center;
-    font-size: 28px;
-    padding: 25px;
-    width: 600px;
-    transition: all 0.5s;
-    cursor: pointer;
-    margin: 20px auto;
-
-  }
-  
-  .button-add span {
-    cursor: pointer;
-    display: inline-block;
-    position: relative;
-    transition: 0.5s;
-  }
-  
-  .button-add span:after {
-    content: '\00bb';
-    position: absolute;
-    opacity: 0;
-    top: 0;
-    right: -20px;
-    transition: 0.5s;
-  }
-  
-  .button-add:hover span {
-    padding-right: 25px;
-  }
-  
-  .button-add:hover span:after {
-    opacity: 1;
-    right: 0;
-  }
-
-.modal-content {
-    position: relative;
-    display: -ms-flexbox;
-    display: block;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    width: fit-content;
-    pointer-events: auto;
-    background-color: #fff;
-    background-clip: padding-box;
-    border: 1px solid rgba(0,0,0,.2);
-    border-radius: .3rem;
-    outline: 0;
+margin: 5px
 }
 
-.modal-content {
-    background-color: #fefefe;
-    margin: 6% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    text-align: center;
-    width: 60%!important;
-    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+.card {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 50rem;
+  height: 10rem;
+  display: inline-grid;
+  margin: 1rem 1rem;
+  box-shadow: 3px 4px #66A9E8
 }
 
-  /* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
+/* .job-avatar {
+  justify-self: center;
+  height: 12rem;
+  width: auto;
+} */
+
+button {
+  position: relative;
+  background-color: #66A9E8;
+  border: none;
+  border-radius: 5px;
+  /* height: 3rem; */
+  width: max-content;
+  color: whitesmoke;
+  font-size: 18px;
+  justify-self: center;
+}
+
+button:hover {
+  background-color: whitesmoke;
+  border: #66A9E8 solid 1px;
+  color: #66A9E8;
+}
+
+.container {
+  padding: 1rem;
+  width: stretch;
+  height: auto;
+  display: none;
+  background: #BCEBFF;
+  opacity: .8;
+  box-shadow: 5px 5px 35px rgba(10, 20, 30, 0.3);
+  margin: 20px auto;
+}
+
+.add-job-form {
+  width: 80%
+}
+
+.submit {
+  position: relative;
+  background-color: #66A9E8;
+  border-radius: 5px;
+  height: 2rem;
+  width: max-content;
+  color: whitesmoke;
+  font-size: 18px;
+  justify-self: center;
+  font-family: monospace;
+  margin: 3px;
+}
+
+.submit:hover {
+  background-color: whitesmoke;
+  border: #66A9E8 solid 1px;
+  color: #66A9E8;
+}
+
+
+.input-text {
+  border-radius: 5px;
+  height: 2rem;
+  width: 60%;
+  font-size: 18px;
+  font-family: monospace;
+  margin: 3px;
+}
+
+/* Css testing below here*/
+
+#jobs {
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#jobs td, #jobs th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#jobs tr:nth-child(even){background-color: #f2f2f2;}
+
+#jobs tr:hover {background-color: #BCEBFF;}
+
+#jobs th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #66A9E8;
+  color: white;
+}
+
+.button-add {
+  display: inline-block;
+  border-radius: 2px;
+  background-color: #66A9E8;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 25px;
+  width: 600px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 20px auto;
+
+}
+
+.button-add span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button-add span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button-add:hover span {
+  padding-right: 25px;
+}
+
+.button-add:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: block;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: fit-content;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0,0,0,.2);
+  border-radius: .3rem;
+  outline: 0;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 6% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  text-align: center;
+  width: 60%!important;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 
 
-  
+
 }
 /* The Close Button */
 .close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+color: black;
+text-decoration: none;
+cursor: pointer;
 }
 
 #job-title {
-  font-size: 50px;
-  color: #66A9E8;
+font-size: 50px;
+color: #66A9E8;
 }
 
 #job-desc {
-  font-size: 20px;
-  color: black;
+font-size: 20px;
+color: black;
 }
 
 #job-stat {
-  font-size: 20px;
-  color: black;
+font-size: 20px;
+color: black;
 }
 
 #job-rating {
-  font-size: 20px;
-  color: black;
+font-size: 20px;
+color: black;
 }
 
 #job-appd {
-  font-size: 20px;
-  color: black;
+font-size: 20px;
+color: black;
 }
 
 #j-source {
-  font-size: 20px;
-  color: black;
+font-size: 20px;
+color: black;
 }
 
 
 .logInModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Login Modal Content/Box */
 .login-modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+background-color: #fefefe;
+margin: 15% auto; /* 15% from the top and centered */
+padding: 20px;
+border: 1px solid #888;
+width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The login Close Button */
 .closeLogin {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
 }
 
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+color: black;
+text-decoration: none;
+cursor: pointer;
 }
 /* The login style */
 #log-in {
-  text-align: center;
-  color: #66A9E8;
-  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
-  
+text-align: center;
+color: #66A9E8;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+
 }
 
 #enter-name{
-  text-align: center;
+text-align: center;
 }
 
 .enterName {
-  text-align: center;
+text-align: center;
 }
 
 .submit {
-  text-align: center;
+text-align: center;
 }
 
 .submit-continue{
-  color:#606060;
-  text-align: center;
+color:#606060;
+text-align: center;
 }
 
 #profile-image{
-  border-radius: 50%;
-  float: left;
+border-radius: 50%;
+float: left;
 }
 
 #profile-button, #logout-button{
-  background-color: lightblue;
-  float: left;
-  margin: 10px;
+background-color: lightblue;
+float: left;
+margin: 10px;
 }
 /* The logout style */
 .logout-modal-content{
-  background-color: #CEE8E2;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+background-color: #CEE8E2;
+margin: 15% auto; /* 15% from the top and centered */
+padding: 20px;
+border: 1px solid #888;
+width: 80%; /* Could be more or less, depending on screen size */
 }
 
 .closeLogout{
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
 }
 
 .logOutModal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* The profile style */
 
 .profile-modal-content{
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+background-color: #fefefe;
+margin: 15% auto; /* 15% from the top and centered */
+padding: 20px;
+border: 1px solid #888;
+width: 80%; /* Could be more or less, depending on screen size */
 }
 
 .closeProfile{
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
 }
 
 .profileModal{
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 #user-name{
-  font-size: 20px;
-  color: black;
+font-size: 20px;
+color: black;
 }
 
 /* The Modal (background) */
 #sign-up-modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */
 .sign-modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
+background-color: #fefefe;
+margin: 15% auto; /* 15% from the top and centered */
+padding: 20px;
+border: 1px solid #888;
+width: 80%; /* Could be more or less, depending on screen size */
 }
 
 /* The Close Button */
 .sign-close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
 }
 
 .sign-close:hover,
 .sign-close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+color: black;
+text-decoration: none;
+cursor: pointer;
 }
